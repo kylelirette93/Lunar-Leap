@@ -17,7 +17,12 @@ public class PlayerController : MonoBehaviour
     private float movementY;
 
     
+
+    
     public float speed = 0;
+
+    public float jumpForce;
+    bool isGrounded = true;
 
     public TextMeshProUGUI countText;
 
@@ -32,13 +37,40 @@ public class PlayerController : MonoBehaviour
         winTextObject.SetActive(false);
     }
 
-    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
+
+        
+        isGrounded = GroundCheck();
+    }
+
+    bool GroundCheck()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+
     void OnMove(InputValue movementValue)
     {       
         Vector2 movementVector = movementValue.Get<Vector2>();
       
         movementX = movementVector.x;
         movementY = movementVector.y;
+
+        
     }
 
     void SetCountText()
@@ -57,6 +89,18 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
      
         rb.AddForce(movement * speed);
+    }
+
+    void Jump()
+    {
+        if (isGrounded)
+        {
+            rb.AddForce(0, jumpForce, 0);
+        }
+        else
+        {
+            rb.AddForce(0, 0, 0);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
