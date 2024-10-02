@@ -12,13 +12,9 @@ public class PlayerController : MonoBehaviour
 
     private int count;
 
-    
     private float movementX;
     private float movementY;
 
-    
-
-    
     public float speed = 0;
 
     public float jumpForce;
