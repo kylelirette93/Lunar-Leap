@@ -6,7 +6,7 @@ public class MovingPlatform : MonoBehaviour
 {
     float travelDistance;
     Vector2 movementVector;
-    float movementSpeed = 1f;
+    public float movementSpeed = 1f;
     bool movingLeft = true;
    
     
