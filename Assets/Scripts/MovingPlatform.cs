@@ -8,6 +8,7 @@ public class MovingPlatform : MonoBehaviour
     Vector2 movementVector;
     float movementSpeed = 1f;
     bool movingLeft = true;
+   
     
     void Start()
     {
