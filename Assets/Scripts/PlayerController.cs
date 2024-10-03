@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using TMPro;
 
@@ -38,6 +39,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
+        }
+
+        if (transform.position.y <= -10f)
+        {
+            ReloadScene();
         }
 
         
@@ -107,5 +113,10 @@ public class PlayerController : MonoBehaviour
             count = count + 1;
             SetCountText();
         }
+    }
+
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }
