@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    float travelDistance;
+    public float travelDistance;
     Vector2 movementVector;
+    Vector2 initialPosition;
     public float movementSpeed = 1f;
-    bool movingLeft = true;
+    public bool movingLeft = true;
    
     
     void Start()
     {
-        travelDistance = 12f;
+        initialPosition = transform.position;
     }
 
     
@@ -29,7 +30,7 @@ public class MovingPlatform : MonoBehaviour
         }
         transform.Translate(movementVector * travelDistance * movementSpeed * Time.deltaTime);
 
-        if (Mathf.Abs(transform.position.x) >= travelDistance)
+        if (Mathf.Abs(transform.position.x - initialPosition.x) >= travelDistance)
         {
             movingLeft = !movingLeft;
         }
