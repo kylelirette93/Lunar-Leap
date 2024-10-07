@@ -1,15 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    int playerHealth = 60;
+    // Variables
+    const int maxHealth = 100;
+    int currentHealth;
     const int damage = 20;
     bool playerIsDead = false;
 
+    // References
+    public HealthBar healthBar;
+    public TextMeshProUGUI healthText;
+
+    private void Start()
+    {
+        // Set the player's current health to max at the start.
+        currentHealth = maxHealth;
+
+        SetHealthText();
+
+        // Fill the health bar slider.
+        healthBar.SetHealthBarMax(maxHealth);
+    }
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Hazard"))
@@ -17,16 +34,30 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(damage);
         }
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(int dmg)
     {
-        if (playerHealth <= 0)
+        // Decrement damage from current health and set the health bar to current health.
+        currentHealth -= dmg;
+
+        SetHealthText();
+
+        healthBar.SetHealthBar(currentHealth);
+
+        if (currentHealth <= 0)
         {
             playerIsDead = true;
             Die();
         }
     }
 
+    void SetHealthText()
+    {
+        // Set the health text to current health.
+        healthText.text = "Health: " + currentHealth.ToString();
+    }
+
     
+
     void Die()
     {
         if (playerIsDead)
