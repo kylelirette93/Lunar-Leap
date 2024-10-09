@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance { get; private set; }
 
-    
-
-
+    private void Awake()
+    {
+        instance = this;
+    }
     public void PlayButtonClicked()
     {
         SceneManager.LoadScene("Level01");
@@ -17,6 +19,11 @@ public class GameManager : MonoBehaviour
     public void ExitButtonClicked()
     {
         Application.Quit();
+    }
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
    
 }

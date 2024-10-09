@@ -9,6 +9,7 @@ TagManager:
   - Asteroid
   - Hazard
   - Enemy
+  - Portal
   layers:
   - Default
   - TransparentFX
