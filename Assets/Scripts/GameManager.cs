@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
 
     public GameObject pausePanel;
+    public static int deathCount = 0;
 
     private void Awake()
     {
@@ -39,6 +40,11 @@ public class GameManager : MonoBehaviour
         {
             PauseGame();
         }
+        if (deathCount >= 3)
+        {
+            deathCount = 0;
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     void PauseGame()
@@ -56,6 +62,11 @@ public class GameManager : MonoBehaviour
     public void QuitButtonClicked()
     {
         Application.Quit();
+    }
+
+    public void PlayAgainClicked()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
 }
