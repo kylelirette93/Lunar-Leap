@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayAgainClicked()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(PlayerHealth.lastBuildIndex);
     }
 
 }

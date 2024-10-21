@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     int currentHealth;
     const int damage = 20;
     bool playerIsDead = false;
+    public static int lastBuildIndex;
 
     // References
     public HealthBar healthBar;
@@ -26,6 +27,8 @@ public class PlayerHealth : MonoBehaviour
 
         // Fill the health bar slider.
         healthBar.SetHealthBarMax(maxHealth);
+
+        lastBuildIndex = SceneManager.GetActiveScene().buildIndex;
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -62,7 +65,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (playerIsDead)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(lastBuildIndex);
         }
     }
 }
