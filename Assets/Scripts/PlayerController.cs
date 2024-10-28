@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
-        if (transform.position.y <= -10f)
+        if (transform.position.y <= -20f)
         {
             GameManager.deathCount++;
             ReloadScene();
