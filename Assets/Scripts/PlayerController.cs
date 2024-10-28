@@ -85,11 +85,11 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded)
         {
-            rb.AddForce(0, jumpForce, 0);
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
         }
         else
         {
-            rb.AddForce(0, 0, 0);
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z);
         }
     }
 

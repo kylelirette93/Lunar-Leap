@@ -181,9 +181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
-  jumpForce: 900
+  jumpForce: 20
   countText: {fileID: 0}
-  winTextObject: {fileID: 0}
 --- !u!114 &6019038830593524517
 MonoBehaviour:
   m_ObjectHideFlags: 0

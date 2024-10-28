@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using Unity.VisualScripting.FullSerializer.Internal;
+using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
 
     public GameObject pausePanel;
+    public TextMeshProUGUI versionText;
     public static int deathCount = 0;
 
     private void Awake()
     {
         instance = this;
+        versionText.text = "V" + PlayerSettings.bundleVersion;
     }
 
     private void Start()
