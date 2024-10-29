@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 0;
 
+    // Variable to determine how far the player can fall before death.
+    public float deathFloat;
+
     public float jumpForce;
     bool isGrounded = true;
 
@@ -36,7 +39,7 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
-        if (transform.position.y <= -20f)
+        if (transform.position.y <= deathFloat)
         {
             GameManager.deathCount++;
             ReloadScene();

@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Hazard") || collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Hazard") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Laser"))
         {
             TakeDamage(damage);
         }

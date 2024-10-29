@@ -68934,6 +68934,11 @@ PrefabInstance:
       propertyPath: countText
       value: 
       objectReference: {fileID: 942019587}
+    - target: {fileID: 923899276628945398, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
+      propertyPath: deathFloat
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 3997247681530790953, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
       propertyPath: m_Name
@@ -69625,10 +69630,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 943280551701623246, guid: a953a903e45e4e64197300940d00dbf2,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3594757480946293694, guid: a953a903e45e4e64197300940d00dbf2,
         type: 3}
       propertyPath: m_Name
       value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594757480946293694, guid: a953a903e45e4e64197300940d00dbf2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3594757480946293694, guid: a953a903e45e4e64197300940d00dbf2,
         type: 3}

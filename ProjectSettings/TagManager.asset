@@ -11,11 +11,12 @@ TagManager:
   - Enemy
   - Portal
   - Panel
+  - Laser
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Unlit
   - Water
   - UI
   - 
