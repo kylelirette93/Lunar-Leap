@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
 
+    public GameObject controlsPanel;
     public GameObject pausePanel;
     public TextMeshProUGUI versionText;
     public static int deathCount = 0;
+    bool controlsDisplayed = false;
 
     private void Awake()
     {
@@ -55,6 +57,22 @@ public class GameManager : MonoBehaviour
             deathCount = 0;
             SceneManager.LoadScene("GameOver");
         }
+
+        if (SceneManager.GetActiveScene().buildIndex == 1 && !controlsDisplayed)
+        {
+            DisplayControls();
+        }
+    }
+
+    void DisplayControls()
+    {
+        controlsPanel.SetActive(true);
+    }
+
+    public void ExitControls()
+    {
+        controlsDisplayed = true;
+        controlsPanel.SetActive(false);
     }
 
     void PauseGame()
