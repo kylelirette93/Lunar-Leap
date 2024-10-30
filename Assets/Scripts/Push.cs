@@ -5,7 +5,6 @@ using UnityEngine;
 public class Push : MonoBehaviour
 {
     float bounceForce = 10f;
-    float impactThreshold = 2f;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))

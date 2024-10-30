@@ -55297,10 +55297,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1513706822622526803, guid: 893e17b40b97d4240985d9817cc9e6bc,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513706822622526803, guid: 893e17b40b97d4240985d9817cc9e6bc,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513706822622526803, guid: 893e17b40b97d4240985d9817cc9e6bc,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4056410855420704530, guid: 893e17b40b97d4240985d9817cc9e6bc,
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045086422266664965, guid: 893e17b40b97d4240985d9817cc9e6bc,
+        type: 3}
+      propertyPath: chaseSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7045086422266664965, guid: 893e17b40b97d4240985d9817cc9e6bc,
         type: 3}
