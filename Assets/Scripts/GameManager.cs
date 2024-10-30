@@ -29,6 +29,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Level01");
     }
 
+    public void MainMenuClicked()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void ExitButtonClicked()
     {
         Application.Quit();
