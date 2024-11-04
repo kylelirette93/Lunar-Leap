@@ -65,7 +65,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (playerIsDead)
         {
-            SceneManager.LoadScene(lastBuildIndex);
+            GameManager.instance.LoseLife();
         }
     }
 }

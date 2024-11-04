@@ -41,8 +41,7 @@ public class PlayerController : MonoBehaviour
 
         if (transform.position.y <= deathFloat)
         {
-            GameManager.deathCount++;
-            ReloadScene();
+            GameManager.instance.LoseLife();
         }
 
         

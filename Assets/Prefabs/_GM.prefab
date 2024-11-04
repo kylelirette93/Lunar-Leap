@@ -45,4 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 0}
-  versionText: {fileID: 0}
+  controlsPanel: {fileID: 0}
+  lives:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  remainingLives: 3
+  player: {fileID: 0}
