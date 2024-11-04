@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class PlayerScore : MonoBehaviour
 {
+    // References.
     public static PlayerScore Instance;
     public GameObject portal;
     public TextMeshProUGUI countText;
+
+    // Variables.
     public int count;
     bool touchedPanel = false;
 
@@ -17,6 +20,7 @@ public class PlayerScore : MonoBehaviour
     }
     void Start()
     {
+        // Initialize count to 0 and update text.
         count = 0;
         portal.SetActive(false);
         SetCountText();
@@ -26,20 +30,17 @@ public class PlayerScore : MonoBehaviour
     {
         countText.text = "Count: " + count.ToString();
 
-        if (count >= 12)
-        {
-            if (touchedPanel)
+        if (count >= 12 && touchedPanel)
+        { 
+            portal.SetActive(true);
+            GameObject door = GameObject.Find("Door");
+            if (door != null)
             {
-                portal.SetActive(true);
-                GameObject door = GameObject.Find("Door");
-                if (door != null)
-                {
-                    Destroy(door.gameObject);
-                }
-                else
-                {
-                    Debug.Log("There's no door, game should continue.");
-                }
+                Destroy(door.gameObject);
+            }
+            else
+            {
+                Debug.Log("There's no door, game should continue.");
             }
         }
     }

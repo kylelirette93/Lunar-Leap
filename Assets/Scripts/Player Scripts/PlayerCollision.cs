@@ -16,6 +16,7 @@ public class PlayerCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             Rigidbody collisionRB = collision.gameObject.GetComponent<Rigidbody>();
+
             // Set the velocity of the player to the rigidbody of the moving platform.
             rb.velocity = collisionRB.velocity;
 
@@ -27,6 +28,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Platform"))
         {
+            // Unparent the player from the platform.
             transform.SetParent(null);
         }
     } 

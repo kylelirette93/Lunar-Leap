@@ -42,8 +42,10 @@ public class PlayerHealth : MonoBehaviour
         // Decrement damage from current health and set the health bar to current health.
         currentHealth -= dmg;
 
+        // Update the health text.
         SetHealthText();
 
+        // Update the health bar.
         healthBar.SetHealthBar(currentHealth);
 
         if (currentHealth <= 0)
