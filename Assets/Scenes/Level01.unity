@@ -54684,6 +54684,21 @@ PrefabInstance:
       objectReference: {fileID: 897455751}
     - target: {fileID: 7718680340551322535, guid: b8f86f28b1659ac45a136b48b91879cf,
         type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7718680340551322535, guid: b8f86f28b1659ac45a136b48b91879cf,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7718680340551322535, guid: b8f86f28b1659ac45a136b48b91879cf,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7718680340551322535, guid: b8f86f28b1659ac45a136b48b91879cf,
+        type: 3}
       propertyPath: m_SizeDelta.x
       value: 100
       objectReference: {fileID: 0}
