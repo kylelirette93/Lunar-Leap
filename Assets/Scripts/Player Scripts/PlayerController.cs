@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f))
+        if (Physics.Raycast(transform.position, Vector3.down * 0.5f, out hit, 1f))
         {
             return true;
         }
@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    
     void OnMove(InputValue movementValue)
     {       
         Vector2 movementVector = movementValue.Get<Vector2>();

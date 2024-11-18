@@ -2,47 +2,71 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class MovingPlatform : MonoBehaviour
 {
-    // References.
-    Vector2 movementVector;
-    Vector2 initialPosition;
+    // References
+    private Vector3 initialPosition;
 
-    // Variables.
-    public float travelDistance;
-    public float movementSpeed = 1f;
-    public bool movingLeft = true;
-   
-    
+    // Variables
+    public float travelDistance = 5f; 
+    public float movementSpeed = 20f; 
+    public bool movingLeft = true; 
+
+    private Rigidbody rb;
+
     void Start()
     {
-        // Store the initial position of the platform.
+        // Initialize variables
         initialPosition = transform.position;
+        rb = GetComponent<Rigidbody>();
+
+        // Make sure Rigidbody is kinematic
+        rb.isKinematic = true;
     }
 
-    
-    void Update()
+    void FixedUpdate()
     {
-        // Boolean to control movement direction.
-        if (movingLeft)
-        {
-            // Create a direction vector to left on the x axis.
-            movementVector = new Vector3(-1, 0);
-        }
-        else if (!movingLeft)
-        {
-            // Create a direction vector to right on the x axis.
-            movementVector = new Vector3(1, 0);
-        }
+        // Calculate movement direction
+        Vector3 movementVector = movingLeft ? Vector3.left : Vector3.right;
 
-        // Move the player based on direction and travel distance, scale by speed and dependent on frame rate.
-        transform.Translate(movementVector * travelDistance * movementSpeed * Time.deltaTime);
+        // Move the platform
+        rb.MovePosition(rb.position + movementVector * movementSpeed * Time.fixedDeltaTime);
 
-        // Determine the absolute different of position between the platform and it's initial position.
-        // If the difference in position is greater than the travel distance, switch direction.
-        if (Mathf.Abs(transform.position.x - initialPosition.x) >= travelDistance)
+        if ((movingLeft && transform.position.x <= initialPosition.x - travelDistance) ||
+            (!movingLeft && transform.position.x >= initialPosition.x + travelDistance))
         {
-            movingLeft = !movingLeft;
+            movingLeft = !movingLeft; // Reverse direction
+        }
+    }
+
+    // Attach player to the platform when standing on it
+    private void OnCollisionStay(Collision collision)
+    {
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Rigidbody playerRb = collision.gameObject.GetComponent<Rigidbody>();
+            if (playerRb != null)
+            {
+                Vector3 platformVelocity = rb.velocity;
+                playerRb.velocity = new Vector3(platformVelocity.x, platformVelocity.y, platformVelocity.z);
+            }
+            collision.transform.SetParent(transform);
+        }
+    }
+
+    // Detach player from the platform when leaving
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Rigidbody playerRb = collision.gameObject.GetComponent<Rigidbody>();
+            if (playerRb != null)
+            {
+                playerRb.velocity = new Vector3(0, playerRb.velocity.y, playerRb.velocity.z);
+            }
+            
         }
     }
 }
