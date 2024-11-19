@@ -7,11 +7,12 @@ public class MovingPlatform : MonoBehaviour
 {
     // References
     private Vector3 initialPosition;
+    private Vector3 lastPosition;
 
     // Variables
-    public float travelDistance = 5f; 
-    public float movementSpeed = 20f; 
-    public bool movingLeft = true; 
+    public float travelDistance = 5f;
+    public float movementSpeed = 20f;
+    public bool movingLeft = true;
 
     private Rigidbody rb;
 
@@ -19,6 +20,7 @@ public class MovingPlatform : MonoBehaviour
     {
         // Initialize variables
         initialPosition = transform.position;
+        lastPosition = initialPosition;
         rb = GetComponent<Rigidbody>();
 
         // Make sure Rigidbody is kinematic
@@ -38,25 +40,32 @@ public class MovingPlatform : MonoBehaviour
         {
             movingLeft = !movingLeft; // Reverse direction
         }
+
+        lastPosition = transform.position;
     }
 
-    // Attach player to the platform when standing on it
     private void OnCollisionStay(Collision collision)
     {
-
         if (collision.gameObject.CompareTag("Player"))
         {
             Rigidbody playerRb = collision.gameObject.GetComponent<Rigidbody>();
             if (playerRb != null)
             {
-                Vector3 platformVelocity = rb.velocity;
-                playerRb.velocity = new Vector3(platformVelocity.x, platformVelocity.y, platformVelocity.z);
+                // Calculate the platform's movement vector
+                Vector3 platformMovement = transform.position - lastPosition;
+
+                // Apply the platform's movement only to the player's position
+                playerRb.MovePosition(playerRb.position + platformMovement);
+
+                // Prevent rolling by resetting angular velocity
+                playerRb.angularVelocity = Vector3.zero;
+
+                // Optional: Damp the horizontal velocity slightly to avoid drifting
+                playerRb.velocity = new Vector3(0, playerRb.velocity.y, playerRb.velocity.z);
             }
-            collision.transform.SetParent(transform);
         }
     }
 
-    // Detach player from the platform when leaving
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -64,9 +73,9 @@ public class MovingPlatform : MonoBehaviour
             Rigidbody playerRb = collision.gameObject.GetComponent<Rigidbody>();
             if (playerRb != null)
             {
-                playerRb.velocity = new Vector3(0, playerRb.velocity.y, playerRb.velocity.z);
+                // Ensure smooth detachment without excess momentum
+                playerRb.velocity = new Vector3(playerRb.velocity.x, playerRb.velocity.y, 0);
             }
-            
         }
     }
 }
