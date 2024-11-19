@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     bool isGrounded = true;
 
     public TextMeshProUGUI countText;
+    AudioSource jumpSound;
 
     
 
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {      
         rb = GetComponent<Rigidbody>();
+        jumpSound = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -88,6 +90,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded)
         {
+            jumpSound.Play();
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
         }
         else

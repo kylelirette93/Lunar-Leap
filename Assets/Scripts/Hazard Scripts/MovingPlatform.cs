@@ -60,8 +60,17 @@ public class MovingPlatform : MonoBehaviour
                 // Prevent rolling by resetting angular velocity
                 playerRb.angularVelocity = Vector3.zero;
 
-                // Optional: Damp the horizontal velocity slightly to avoid drifting
-                playerRb.velocity = new Vector3(0, playerRb.velocity.y, playerRb.velocity.z);
+                float horizontalInput = Input.GetAxis("Horizontal");
+
+                if (Mathf.Abs(horizontalInput) > 0.1f)
+                {
+                    playerRb.velocity = new Vector3(horizontalInput * movementSpeed, playerRb.velocity.y, playerRb.velocity.z);
+                }
+                else
+                {
+                    // Damp the horizontal velocity slightly to avoid drifting
+                    playerRb.velocity = new Vector3(0, playerRb.velocity.y, playerRb.velocity.z);
+                }
             }
         }
     }
