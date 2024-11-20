@@ -25,8 +25,9 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI countText;
     AudioSource jumpSound;
 
-    
 
+
+    
 
     void Start()
     {      

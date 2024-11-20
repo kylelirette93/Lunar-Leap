@@ -27,9 +27,7 @@ public class ChasePlayer : MonoBehaviour
 
     void Chase()
     {
-        // Update y position constantly with fixed value, this prevents the enemy from jumping with the player.
-        Vector3 newPosition = new Vector3(transform.position.x, fixedY, transform.position.z);
-        transform.position = newPosition;
+        Vector3 targetPosition = new Vector3(playerTransform.position.x, fixedY, playerTransform.position.z);
 
         // Calculate direction and distance to player.
         Vector3 directionToPlayer = (playerTransform.position - transform.position).normalized;
@@ -37,7 +35,7 @@ public class ChasePlayer : MonoBehaviour
         transform.rotation = rotation;
 
         // Chase the player.
-        transform.position += directionToPlayer * chaseSpeed * Time.smoothDeltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, chaseSpeed * Time.deltaTime);
     }
 
     

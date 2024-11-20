@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class Bouncy : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    Rigidbody playerRb;
+    string playerTag = "Player";
+
+    private void Start()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        playerRb = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Rigidbody>();
+    }
+
+    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
         {
-            Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
-            rb.AddForce(Vector3.up * 25, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up * 25, ForceMode.Impulse);
         }
     }
 }
