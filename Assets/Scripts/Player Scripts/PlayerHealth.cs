@@ -13,10 +13,12 @@ public class PlayerHealth : MonoBehaviour
     const int damage = 20;
     bool playerIsDead = false;
     public static int lastBuildIndex;
+    public bool canDie = true;
 
     // References
     public HealthBar healthBar;
     public TextMeshProUGUI healthText;
+    string bubbleTag = "Bubble";
 
     private void Start()
     {
@@ -34,7 +36,17 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Hazard") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Laser"))
         {
-            TakeDamage(damage);
+            if (canDie)
+            {
+                TakeDamage(damage);
+            }
+            else
+            {
+                GameObject bubble = GameObject.FindWithTag(bubbleTag);
+                Destroy(bubble);
+                canDie = true;
+            }
+        
         }
     }
     public void TakeDamage(int dmg)

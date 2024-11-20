@@ -13,6 +13,7 @@ TagManager:
   - Panel
   - Laser
   - Backwall
+  - Bubble
   layers:
   - Default
   - TransparentFX

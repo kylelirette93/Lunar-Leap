@@ -9,6 +9,7 @@ public class PlayerScore : MonoBehaviour
     public static PlayerScore Instance;
     public GameObject portal;
     public TextMeshProUGUI countText;
+    PlayerHealth playerHealth;
 
     // Variables.
     public int count;
@@ -24,6 +25,7 @@ public class PlayerScore : MonoBehaviour
         count = 0;
         portal.SetActive(false);
         SetCountText();
+        playerHealth = GetComponent<PlayerHealth>();    
     }
 
     void SetCountText()
@@ -52,6 +54,17 @@ public class PlayerScore : MonoBehaviour
             other.gameObject.SetActive(false);
             count = count + 1;
             SetCountText();
+        }
+        else if (other.gameObject.CompareTag("Bubble"))
+        {
+            other.gameObject.transform.localScale *= 2;
+            Vector3 bubbleCenter = other.gameObject.transform.position;
+            transform.position = bubbleCenter;
+
+            Debug.Log("Setting player as parent of bubble.");
+            other.gameObject.transform.SetParent(transform);
+            playerHealth.canDie = false;
+
         }
     }
 
