@@ -9,7 +9,7 @@ public class BonusLevelTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("BonusRoom");
+            SceneManager.LoadScene("BonusLevel");
         }
     }
 }

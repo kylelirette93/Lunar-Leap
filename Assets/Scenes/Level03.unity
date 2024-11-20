@@ -424,18 +424,18 @@ PrefabInstance:
     - target: {fileID: 8494468770666510855, guid: fed26a8e7edf0014281fb46aa3fc9e43,
         type: 3}
       propertyPath: m_Pitch
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8494468770666510855, guid: fed26a8e7edf0014281fb46aa3fc9e43,
         type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 0.359
       objectReference: {fileID: 0}
     - target: {fileID: 8494468770666510855, guid: fed26a8e7edf0014281fb46aa3fc9e43,
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 9922ea5abd2389a4fb4098cbaf77cd77, type: 3}
+      objectReference: {fileID: 8300000, guid: 838d55c995ec661458a3142ea19b73c9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34545,7 +34545,12 @@ PrefabInstance:
     - target: {fileID: 923899276628945398, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
       propertyPath: deathFloat
-      value: -80
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083211729726213892, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
+      propertyPath: scene
+      value: EndScreen
       objectReference: {fileID: 0}
     - target: {fileID: 3997247681530790953, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
@@ -34622,6 +34627,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 7268839110890283161, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 552d5cf8117514e48bb84aac69b4c32a, type: 3}
     - target: {fileID: 7789071455412274662, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
       propertyPath: m_Drag

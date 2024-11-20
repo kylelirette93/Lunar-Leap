@@ -339,21 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d090cf643bf164ebbde5b1caf27d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &131312357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131312334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e09a4ac2523f3984694c900f0376aba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portal: {fileID: 1485733467}
-  countText: {fileID: 1029435540}
-  count: 0
+  scene: Level02
 --- !u!1 &156705893
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +785,7 @@ PrefabInstance:
     - target: {fileID: 647859117007978342, guid: 17b8518ba84279a47a0ccb5aa343c15f,
         type: 3}
       propertyPath: movementSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 647859117007978342, guid: 17b8518ba84279a47a0ccb5aa343c15f,
         type: 3}
@@ -1489,7 +1475,7 @@ PrefabInstance:
     - target: {fileID: 647859117007978342, guid: 17b8518ba84279a47a0ccb5aa343c15f,
         type: 3}
       propertyPath: movementSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 647859117007978342, guid: 17b8518ba84279a47a0ccb5aa343c15f,
         type: 3}
@@ -56655,7 +56641,7 @@ PrefabInstance:
     - target: {fileID: 647859117007978342, guid: 17b8518ba84279a47a0ccb5aa343c15f,
         type: 3}
       propertyPath: movementSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 647859117007978342, guid: 17b8518ba84279a47a0ccb5aa343c15f,
         type: 3}
@@ -56901,6 +56887,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 897455751}
+    - target: {fileID: 2245343854220463936, guid: b8f86f28b1659ac45a136b48b91879cf,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245343854220463936, guid: b8f86f28b1659ac45a136b48b91879cf,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245343854220463936, guid: b8f86f28b1659ac45a136b48b91879cf,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2854283900853358885, guid: b8f86f28b1659ac45a136b48b91879cf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -57076,7 +57077,7 @@ PrefabInstance:
     - target: {fileID: 7045086422266664965, guid: 893e17b40b97d4240985d9817cc9e6bc,
         type: 3}
       propertyPath: chaseSpeed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7045086422266664965, guid: 893e17b40b97d4240985d9817cc9e6bc,
         type: 3}
@@ -57181,6 +57182,16 @@ PrefabInstance:
       propertyPath: winTextObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2083211729726213892, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
+      propertyPath: scene
+      value: Level02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083211729726213892, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
+      propertyPath: buildIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3997247681530790953, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
       propertyPath: m_Name
@@ -57248,6 +57259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5622725280702968179, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
+      propertyPath: count
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622725280702968179, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
       propertyPath: portal
       value: 
       objectReference: {fileID: 1485733467}
@@ -57301,7 +57317,8 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2083211729726213892, guid: 446bd0576f4f52345977185389c45a48, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -57309,10 +57326,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 131312348}
-    - targetCorrespondingSourceObject: {fileID: 3997247681530790953, guid: 446bd0576f4f52345977185389c45a48,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 131312357}
   m_SourcePrefab: {fileID: 100100000, guid: 446bd0576f4f52345977185389c45a48, type: 3}
 --- !u!1001 &6625368506419979642
 PrefabInstance:

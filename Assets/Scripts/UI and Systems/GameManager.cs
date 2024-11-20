@@ -61,11 +61,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void LoadNextLevel()
-    {
-        // Load the next level in index.
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+    
 
     void Update()
     {
