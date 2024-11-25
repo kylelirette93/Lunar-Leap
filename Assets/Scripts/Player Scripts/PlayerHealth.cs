@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
 {
     // Variables
     const int maxHealth = 100;
-    int currentHealth;
+    public int currentHealth;
     const int damage = 20;
     bool playerIsDead = false;
     public static int lastBuildIndex;
@@ -66,10 +66,16 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void SetHealthText()
+    public void SetHealthText()
     {
         // Set the health text to current health.
         healthText.text = "Health: " + currentHealth.ToString();
+    }
+
+    public void Revive()
+    {
+        currentHealth = maxHealth;
+        Mathf.Clamp(currentHealth, 0, maxHealth);
     }
 
     

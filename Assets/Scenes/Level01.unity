@@ -790,7 +790,7 @@ PrefabInstance:
     - target: {fileID: 647859117007978342, guid: 17b8518ba84279a47a0ccb5aa343c15f,
         type: 3}
       propertyPath: travelDistance
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 874747122891529778, guid: 17b8518ba84279a47a0ccb5aa343c15f,
         type: 3}
@@ -1480,7 +1480,7 @@ PrefabInstance:
     - target: {fileID: 647859117007978342, guid: 17b8518ba84279a47a0ccb5aa343c15f,
         type: 3}
       propertyPath: travelDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 874747122891529778, guid: 17b8518ba84279a47a0ccb5aa343c15f,
         type: 3}
@@ -56666,7 +56666,7 @@ PrefabInstance:
     - target: {fileID: 647859117007978342, guid: 17b8518ba84279a47a0ccb5aa343c15f,
         type: 3}
       propertyPath: travelDistance
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 874747122891529778, guid: 17b8518ba84279a47a0ccb5aa343c15f,
         type: 3}
@@ -57190,7 +57190,7 @@ PrefabInstance:
     - target: {fileID: 923899276628945398, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
       propertyPath: speed
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 923899276628945398, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
@@ -57200,7 +57200,7 @@ PrefabInstance:
     - target: {fileID: 923899276628945398, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
       propertyPath: jumpForce
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 923899276628945398, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
@@ -57332,6 +57332,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 552d5cf8117514e48bb84aac69b4c32a, type: 3}
+    - target: {fileID: 7789071455412274662, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7789071455412274662, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
       propertyPath: m_Interpolate

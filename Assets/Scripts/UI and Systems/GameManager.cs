@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     // References.
     public GameObject pausePanel;
     public GameObject controlsPanel;
+    public PlayerHealth playerHealth;
     public Image[] lives;
     public GameObject player;
     Vector3 originalPosition;
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         pausePanel.SetActive(false);
         player = GameObject.Find("Player");
+        playerHealth = player.GetComponent<PlayerHealth>();
     }
 
 
@@ -122,6 +124,9 @@ public class GameManager : MonoBehaviour
         // Get rid of a life from UI.
         remainingLives--;
         player.transform.position = originalPosition;
+        playerHealth.Revive();
+        playerHealth.SetHealthText();
+        playerHealth.healthBar.SetHealthBarMax(playerHealth.currentHealth);
         Rigidbody playerRB = player.GetComponent<Rigidbody>();
         playerRB.velocity = Vector3.zero;
         playerRB.angularVelocity = Vector3.zero;

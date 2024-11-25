@@ -34534,6 +34534,11 @@ PrefabInstance:
       objectReference: {fileID: 1204032363}
     - target: {fileID: 923899276628945398, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 923899276628945398, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
       propertyPath: countText
       value: 
       objectReference: {fileID: 1015085540}
@@ -34636,6 +34641,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Drag
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789071455412274662, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789071455412274662, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
