@@ -65673,6 +65673,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b31de0185c048c449bcd80257a57d15, type: 3}
+--- !u!1 &1155041867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2981307364022425526, guid: 3b31de0185c048c449bcd80257a57d15,
+    type: 3}
+  m_PrefabInstance: {fileID: 1155041866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1160234425
 GameObject:
   m_ObjectHideFlags: 0
@@ -69110,9 +69116,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5622725280702968179, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 1155041867}
+    - target: {fileID: 5622725280702968179, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
       propertyPath: portal
       value: 
       objectReference: {fileID: 1475988760}
+    - target: {fileID: 5622725280702968179, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
+      propertyPath: offset.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622725280702968179, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
+      propertyPath: offset.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622725280702968179, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
+      propertyPath: offset.z
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 5622725280702968179, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
       propertyPath: countText
@@ -70361,6 +70387,16 @@ PrefabInstance:
     - target: {fileID: 3329125287126390770, guid: b8f86f28b1659ac45a136b48b91879cf,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046909271558496320, guid: b8f86f28b1659ac45a136b48b91879cf,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684109906842261506, guid: b8f86f28b1659ac45a136b48b91879cf,
+        type: 3}
+      propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7718680340551322535, guid: b8f86f28b1659ac45a136b48b91879cf,

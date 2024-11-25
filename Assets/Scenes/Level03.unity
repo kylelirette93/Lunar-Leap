@@ -34614,9 +34614,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5622725280702968179, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 1364275483}
+    - target: {fileID: 5622725280702968179, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
       propertyPath: portal
       value: 
       objectReference: {fileID: 1712050419}
+    - target: {fileID: 5622725280702968179, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
+      propertyPath: offset.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622725280702968179, guid: 446bd0576f4f52345977185389c45a48,
+        type: 3}
+      propertyPath: offset.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5622725280702968179, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
       propertyPath: countText
@@ -34966,6 +34981,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2430495805449935256, guid: 507c8eae534882c4fbdbf31d7dcd8803,
     type: 3}
   m_PrefabInstance: {fileID: 1763244135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1364275483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2981307364022425526, guid: 3b31de0185c048c449bcd80257a57d15,
+    type: 3}
+  m_PrefabInstance: {fileID: 1419737393}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1419737393
 PrefabInstance:

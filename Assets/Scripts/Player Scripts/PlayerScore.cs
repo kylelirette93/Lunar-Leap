@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScore : MonoBehaviour
 {
     // References.
     public static PlayerScore Instance;
+    public GameObject panel;
     public GameObject portal;
     public TextMeshProUGUI countText;
     PlayerHealth playerHealth;
+    public Vector3 offset;
 
     // Variables.
     public int count;
     bool touchedPanel = false;
+    Vector3 cachedPanelPosition;
 
     private void Awake()
     {
@@ -21,6 +25,7 @@ public class PlayerScore : MonoBehaviour
     }
     void Start()
     {
+        cachedPanelPosition = panel.transform.position;
         // Initialize count to 0 and update text.
         count = 0;
         portal.SetActive(false);
@@ -30,10 +35,19 @@ public class PlayerScore : MonoBehaviour
 
     void SetCountText()
     {
-        countText.text = "Count: " + count.ToString();
+        countText.text = $"{count} / 12 gears collected.";
+        Vector3 panelPosition = panel.transform.position; 
+        Vector3 worldPositionAbovePanel = panelPosition + offset;
+
+        Vector3 screenPoint = Camera.main.WorldToScreenPoint(worldPositionAbovePanel);
+        Vector3 localPosition = countText.transform.parent.
+            GetComponent<RectTransform>().InverseTransformPoint(screenPoint);
+
+        countText.transform.localPosition = localPosition;
 
         if (count >= 12 && touchedPanel)
-        { 
+        {
+            countText.text = "Portal Activated!";
             portal.SetActive(true);
             GameObject door = GameObject.Find("Door");
             if (door != null)
@@ -66,6 +80,11 @@ public class PlayerScore : MonoBehaviour
             playerHealth.canDie = false;
 
         }
+    }
+
+    private void LateUpdate()
+    {
+        SetCountText();
     }
 
     private void OnCollisionEnter(Collision collision)
