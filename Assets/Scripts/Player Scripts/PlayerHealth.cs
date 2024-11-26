@@ -13,11 +13,13 @@ public class PlayerHealth : MonoBehaviour
     bool playerIsDead = false;
     public static int lastBuildIndex;
     public bool canDie = true;
+    float damageCooldown = 0f;
 
     // References
     public HealthBar healthBar;
     public TextMeshProUGUI healthText;
     string bubbleTag = "Bubble";
+    Rigidbody rb;
 
     private void Start()
     {
@@ -30,14 +32,22 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetHealthBarMax(maxHealth);
 
         lastBuildIndex = SceneManager.GetActiveScene().buildIndex;
+
+        rb = GetComponent<Rigidbody>();
     }
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Hazard") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Laser"))
         {
             if (canDie)
             {
-                TakeDamage(damage);
+                damageCooldown += Time.deltaTime;
+                if (damageCooldown >= 2f)
+                {
+                    TakeDamage(damage);
+                    damageCooldown = 0f;
+                }
+                
             }
             else
             {

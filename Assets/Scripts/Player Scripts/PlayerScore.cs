@@ -12,12 +12,12 @@ public class PlayerScore : MonoBehaviour
     public GameObject portal;
     public TextMeshProUGUI countText;
     PlayerHealth playerHealth;
-    public Vector3 offset;
 
     // Variables.
     public int count;
     bool touchedPanel = false;
     Vector3 cachedPanelPosition;
+    public Vector3 offset;
 
     private void Awake()
     {
@@ -36,14 +36,15 @@ public class PlayerScore : MonoBehaviour
     void SetCountText()
     {
         countText.text = $"{count} / 12 gears collected.";
-        Vector3 panelPosition = panel.transform.position; 
+        Vector3 panelPosition = panel.transform.position;
         Vector3 worldPositionAbovePanel = panelPosition + offset;
 
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(worldPositionAbovePanel);
         Vector3 localPosition = countText.transform.parent.
             GetComponent<RectTransform>().InverseTransformPoint(screenPoint);
 
-        countText.transform.localPosition = localPosition;
+        countText.transform.localPosition = Vector3.Lerp(countText.transform.localPosition, localPosition, Time.deltaTime * 10f);
+    
 
         if (count >= 12 && touchedPanel)
         {
