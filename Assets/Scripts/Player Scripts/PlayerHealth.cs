@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
     }
     void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Hazard") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Laser"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Laser"))
         {
             if (canDie)
             {
@@ -55,7 +55,23 @@ public class PlayerHealth : MonoBehaviour
                 Destroy(bubble);
                 canDie = true;
             }
-        
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Hazard") || collision.gameObject.CompareTag("Laser"))
+        {
+            if (canDie)
+            {
+                TakeDamage(damage);
+            }
+            else
+            {
+                GameObject bubble = GameObject.FindWithTag(bubbleTag);
+                Destroy(bubble);
+                canDie = true;
+            }
         }
     }
     public void TakeDamage(int dmg)

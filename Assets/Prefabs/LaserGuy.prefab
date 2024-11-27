@@ -101,4 +101,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireDelay: 0
+  fireForce: 0
   laserPrefab: {fileID: 0}

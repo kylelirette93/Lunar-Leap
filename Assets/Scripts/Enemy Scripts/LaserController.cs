@@ -6,14 +6,17 @@ public class LaserController : MonoBehaviour
 {
     
     // Variables.
-    public int fireDelay;
+    public float fireDelay;
     public float fireForce;
+    float destroyDelay = 4f;
 
     // References.
     public GameObject laserPrefab;
+    GameObject laserInstance;
     void Start()
     {
         StartCoroutine(FireLaser(fireDelay));
+        StartCoroutine(DestroyLaser(destroyDelay));
     }
 
     IEnumerator FireLaser(float delay)
@@ -29,7 +32,7 @@ public class LaserController : MonoBehaviour
             Quaternion convertedRotation = Quaternion.Euler(laserRotation);
 
             // Instantiate laser with offset and rotation.
-            GameObject laserInstance = Instantiate(laserPrefab, transform.position + offsetPosition, convertedRotation);   
+            laserInstance = Instantiate(laserPrefab, transform.position + offsetPosition, convertedRotation);   
             
             // Add force to the laser.
             laserInstance.GetComponent<Rigidbody>().AddForce(new Vector3(fireForce, 0, 0), ForceMode.Impulse);
@@ -37,5 +40,11 @@ public class LaserController : MonoBehaviour
             // Shoot laser once for every delay.
             yield return new WaitForSeconds(delay);
         }
+    }
+
+    IEnumerator DestroyLaser(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(laserInstance);
     }
 }
