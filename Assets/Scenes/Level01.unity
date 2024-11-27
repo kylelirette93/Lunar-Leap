@@ -56801,7 +56801,7 @@ PrefabInstance:
     - target: {fileID: 3374973899839519745, guid: 08f54e2a45a166042ad0b25da8489068,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 3374973899839519745, guid: 08f54e2a45a166042ad0b25da8489068,
         type: 3}
@@ -56842,6 +56842,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387017450416990661, guid: 08f54e2a45a166042ad0b25da8489068,
+        type: 3}
+      propertyPath: fixedY
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 4387017450416990661, guid: 08f54e2a45a166042ad0b25da8489068,
         type: 3}
@@ -57249,18 +57254,34 @@ PrefabInstance:
     - target: {fileID: 8283803571946113441, guid: b8f86f28b1659ac45a136b48b91879cf,
         type: 3}
       propertyPath: m_fontSize
-      value: 24
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283803571946113441, guid: b8f86f28b1659ac45a136b48b91879cf,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
+    - target: {fileID: 8283803571946113441, guid: b8f86f28b1659ac45a136b48b91879cf,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8283803571946113441, guid: b8f86f28b1659ac45a136b48b91879cf,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 24
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 8283803571946113441, guid: b8f86f28b1659ac45a136b48b91879cf,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 6d5d4e9806c1b2a43a3b1ce6083f1431, type: 2}
+    - target: {fileID: 8283803571946113441, guid: b8f86f28b1659ac45a136b48b91879cf,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8815837347087048784, guid: b8f86f28b1659ac45a136b48b91879cf,
         type: 3}
       propertyPath: m_Pivot.x

@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: LiberationSans SDF Material
   m_Shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
-  m_Parent: {fileID: 2100000, guid: f47a654cf74cf8d40b1d81f5dd3b8d11, type: 2}
+  m_Parent: {fileID: 2100000, guid: 72464161ca824a64daf87a450ebbdf73, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - OUTLINE_ON
@@ -27,19 +27,19 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _FaceDilate: 0.089
-    - _OutlineSoftness: 0.07
-    - _OutlineWidth: 0.273
+    - _FaceDilate: -0.064
+    - _OutlineSoftness: 0.061
+    - _OutlineWidth: 0.208
     - _ScaleRatioA: 0.9
-    - _ScaleRatioC: 0.55369896
-    - _UnderlayDilate: -0.04
-    - _UnderlayOffsetX: 0.733
-    - _UnderlayOffsetY: 0.19
-    - _UnderlaySoftness: 0.483
+    - _ScaleRatioC: 0.67828894
+    - _UnderlayDilate: -0.058
+    - _UnderlayOffsetX: 0.773
+    - _UnderlayOffsetY: -0.561
+    - _UnderlaySoftness: 0.448
     m_Colors:
-    - _FaceColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
-    - _OutlineColor: {r: 0.3018868, g: 0.9622642, b: 0, a: 1}
-    - _UnderlayColor: {r: 0.1657682, g: 0.7735849, b: 0, a: 0.5019608}
+    - _FaceColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.30667317, g: 1, b: 0, a: 1}
+    - _UnderlayColor: {r: 0.18951362, g: 0.8113208, b: 0, a: 0.5}
   m_BuildTextureStacks: []
 --- !u!114 &11400000
 MonoBehaviour:
