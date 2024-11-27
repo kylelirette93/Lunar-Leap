@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public PlayerHealth playerHealth;
     public Image[] lives;
     public GameObject player;
+    public GameObject cursorLock;
     Vector3 originalPosition;
 
     // Variables.
@@ -39,7 +40,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        pausePanel.SetActive(false);
+        if (pausePanel != null)
+        {
+            pausePanel.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Pause panel is null or not needed for this scene.");
+        }
         player = GameObject.Find("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
     }
@@ -91,6 +99,7 @@ public class GameManager : MonoBehaviour
     {
         controlsDisplayed = true;
         controlsPanel.SetActive(false);
+        cursorLock.SetActive(true);
     }
     void PauseGame()
     {
