@@ -74,6 +74,22 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bubble")) 
+        {
+            other.gameObject.transform.localScale *= 2;
+            Vector3 bubbleCenter = other.gameObject.transform.position;
+            transform.position = bubbleCenter;
+
+            Debug.Log("Setting player as parent of bubble.");
+            other.gameObject.transform.SetParent(transform);
+            other.gameObject.transform.localPosition = Vector3.zero;
+            canDie = false;
+
+        }
+    }
     public void TakeDamage(int dmg)
     {
         // Decrement damage from current health and set the health bar to current health.

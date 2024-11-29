@@ -6,6 +6,7 @@ public class Bouncy : MonoBehaviour
 {
     Rigidbody playerRb;
     string playerTag = "Player";
+    public float bounceForce;
 
     private void Start()
     {
@@ -18,7 +19,10 @@ public class Bouncy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            playerRb.AddForce(Vector3.up * 25, ForceMode.Impulse);
+            // Reset player's y velocity before applying force.
+            // This makes for consistant bounce.
+            playerRb.velocity = Vector3.zero;
+            playerRb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
         }
     }
 }

@@ -70,17 +70,6 @@ public class PlayerScore : MonoBehaviour
             count = count + 1;
             SetCountText();
         }
-        else if (other.gameObject.CompareTag("Bubble"))
-        {
-            other.gameObject.transform.localScale *= 2;
-            Vector3 bubbleCenter = other.gameObject.transform.position;
-            transform.position = bubbleCenter;
-
-            Debug.Log("Setting player as parent of bubble.");
-            other.gameObject.transform.SetParent(transform);
-            playerHealth.canDie = false;
-
-        }
     }
 
     private void LateUpdate()

@@ -34628,7 +34628,7 @@ PrefabInstance:
     - target: {fileID: 2083211729726213892, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
       propertyPath: scene
-      value: EndScreen
+      value: BossBattle
       objectReference: {fileID: 0}
     - target: {fileID: 3997247681530790953, guid: 446bd0576f4f52345977185389c45a48,
         type: 3}
